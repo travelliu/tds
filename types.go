@@ -294,7 +294,7 @@ func decodeDateTime(e *binary.Encoder, i colType) (interface{}, error) {
 	case dateType, dateNType:
 		julianDay = int(e.Int32())
 	// time, number 300ms since midnight
-	case timeType:
+	case timeType, timeNType:
 		ms = int(e.Int32()) * 1000 / 300
 	// smalldatetime, julian day from sybase epoch and number of minutes since midnight
 	case smalldatetimeType:
